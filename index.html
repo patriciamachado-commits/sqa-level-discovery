@@ -201,7 +201,7 @@
         <a href="https://sqaeducation.org/english-test-start-free" target="_blank" class="btn btn-secondary" style="font-size:.85rem;margin:4px">Join Waitlist (Free) →</a>
         <a href="https://sqaeducation.org/english-test-start-premium/" target="_blank" class="btn btn-gold" style="font-size:.85rem;margin:4px">Start Classes Now →</a>
       </div>
-      <p style="font-size:.78rem;color:var(--text-light);margin-top:14px">If you believe this is an error, contact us at <a href="mailto:info@sqaeducation.org" style="color:var(--purple)">info@sqaeducation.org</a></p>
+      <p style="font-size:.78rem;color:var(--text-light);margin-top:14px">If you believe this is an error, contact us at <a href="/cdn-cgi/l/email-protection#4821262e27083b39292d2c3d2b293c21272666273a2f" style="color:var(--purple)"><span class="__cf_email__" data-cfemail="eb82858d84ab989a8a8e8f9e888a9f828485c584998c">[email&#160;protected]</span></a></p>
     </div>
   </section>
 
@@ -339,7 +339,7 @@
   <div class="footer">© 2026 SQA Education Foundation · Real English for Real Life</div>
 </div>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 (function(){
 'use strict';
 var SHEETS_ENDPOINT = 'https://script.google.com/macros/s/AKfycbxfVP9KPWSyKKuprnpWQ0SWHogHAFOlm6MDxrtdRUt3A__KOw_ZAs4vUYwU6MPdq96nZg/exec';
@@ -436,7 +436,7 @@ async function oCall(studentText){
   showTyping();oProcessing=true;S('#send-btn').disabled=true;S('#mic-btn').disabled=true;
   try{
   if(!ORAL_PROXY){hideTyping();addBubble('system','Speaking test not configured yet. Please set up the API proxy (see deployment guide).');oProcessing=false;S('#send-btn').disabled=false;S('#mic-btn').disabled=false;return}
-    var res=await fetch(ORAL_PROXY,{method:'POST',headers:{'Content-Type':'text/plain'},body:JSON.stringify({system:INTERVIEWER_PROMPT,messages:msgs})});
+    var res=await fetch(ORAL_PROXY,{method:'POST',redirect:'follow',body:JSON.stringify({system:INTERVIEWER_PROMPT,messages:msgs})});
     var data=await res.json();hideTyping();
     var rt=data.content.map(function(c){return c.text||''}).join('');
     rt=rt.replace(/```json\s*/gi,'').replace(/```\s*/g,'').trim();
@@ -554,13 +554,4 @@ S('#btn-retake-all').addEventListener('click',function(){writtenResult=null;oral
 // Check localStorage on page load
 try{
   var done=localStorage.getItem('sqa-test-done');
-  var doneEmail=localStorage.getItem('sqa-test-email');
-  if(done==='Y'){
-    S('#already-detail').textContent=doneEmail?'Email used: '+doneEmail:'You completed this test previously.';
-    go('scr-already');
-  }
-}catch(x){}
-})();
-</script>
-</body>
-</html>
+  var don
